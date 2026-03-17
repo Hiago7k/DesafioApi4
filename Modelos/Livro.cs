@@ -32,6 +32,5 @@ internal class Livro
         Console.WriteLine($"Genero: {Genero}");
         Console.WriteLine($"Numero de paginas: {Paginas}");
         Console.WriteLine($"Editora: {Editora}");
-
     }
 }

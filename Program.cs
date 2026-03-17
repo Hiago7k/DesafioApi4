@@ -1,11 +1,13 @@
-﻿using (HttpClient httpClient = new HttpClient()) 
+﻿using DesafioApi4.Modelos;
+using System.Text.Json;
+
+using (HttpClient httpClient = new HttpClient()) 
 {
-
-
     try
     {
         string resposta = await httpClient.GetStringAsync("https://raw.githubusercontent.com/ArthurOcFernandes/Exerc-cios-C-/curso-4-aula-2/Jsons/Livros.json");
-        Console.WriteLine(resposta);
+        var livros = JsonSerializer.Deserialize<List<Livro>>(resposta)!;
+        livros[0].ExibirDetalhes();
     }
     catch (Exception ex) 
     {
