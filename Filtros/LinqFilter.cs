@@ -13,11 +13,11 @@ internal class LinqFilter
 {
     public static void ListarLivrosFiltrados(List<Livro> livros) 
     {
-        var livrosFiltrados = livros.Select(livros => livros.Nome).Distinct().ToList();
+        // var livrosFiltrados = livros.Select(livros => livros.Nome).Distinct().ToList();
+        var livrosFiltrados = livros.Select(livros => livros.Nome.OrderBy(livros.Nome))!;
         foreach (var filme in livrosFiltrados) 
         {
-            Console.WriteLine("- {filme}");
+            Console.WriteLine($"- {filme}");
         }
     }
-
 }
